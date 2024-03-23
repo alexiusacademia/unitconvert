@@ -1,11 +1,5 @@
 package unitconvert
 
-import (
-	"errors"
-)
-
-var UnsupportedDestinationError error = errors.New("Unsupported unit destination.")
-
 type UnitLength int
 
 var Meter Unit = Unit{Name: "meter", Type: LengthUnit, System: "metric"}
