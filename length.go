@@ -4,7 +4,7 @@ import (
 	"errors"
 )
 
-var defaultError error = errors.New("Unsupported unit destination.")
+var UnsupportedDestinationError error = errors.New("Unsupported unit destination.")
 
 type UnitLength int
 
@@ -43,7 +43,7 @@ func Length(v float64, from, to Unit) (float64, error) {
 
 	factor, ok := conversionFactors[from][to]
 	if !ok {
-		return 0, defaultError
+		return 0, UnsupportedDestinationError
 	}
 
 	return v * factor, nil
