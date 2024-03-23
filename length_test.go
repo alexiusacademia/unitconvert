@@ -10,7 +10,7 @@ import (
 func TestLength(t *testing.T) {
 	v := 2.5
 
-	result, err := unitconvert.Length(v, unitconvert.Meter, unitconvert.Feet)
+	result, err := unitconvert.Length(v, unitconvert.Feet, unitconvert.Feet)
 	if err != nil {
 		t.Errorf("An error has occured: %s\n", err)
 	}

@@ -1,19 +1,19 @@
 package unitconvert
 
-import "errors"
+import (
+	"errors"
+)
 
 var defaultError error = errors.New("Unsupported unit destination.")
 
 type UnitLength int
 
-const (
-	Meter UnitLength = iota
-	Feet
-)
+var Meter Unit = Unit{Name: "meter", Type: LengthUnit, System: "metric"}
+var Feet Unit = Unit{Name: "feet", Type: LengthUnit, System: "metric"}
 
 const meterToFeet float64 = 3.28084
 
-var conversionFactors = map[UnitLength]map[UnitLength]float64{
+var conversionFactors = map[Unit]map[Unit]float64{
 	Meter: {
 		Feet: meterToFeet,
 		// Add more here
@@ -35,7 +35,7 @@ var conversionFactors = map[UnitLength]map[UnitLength]float64{
 // Returns:
 // - The converted value (float64).
 // - An error if there is one (error).
-func Length(v float64, from, to UnitLength) (float64, error) {
+func Length(v float64, from, to Unit) (float64, error) {
 
 	if from == to {
 		return v, nil
