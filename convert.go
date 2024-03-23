@@ -4,6 +4,16 @@ import "errors"
 
 var defaultError error = errors.New("Unsupported unit destination.")
 
+// Convert length quantities.
+//
+// Args:
+// - v (float64): The value to be converted.
+// - from (UnitLength): The unit of the value.
+// - to (UnitLength): The destination unit.
+//
+// Returns:
+// - The converted value (float64).
+// - An error if there is one (error).
 func Length(v float64, from UnitLength, to UnitLength) (float64, error) {
 	if from == to {
 		return v, nil
