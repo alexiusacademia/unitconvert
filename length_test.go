@@ -15,7 +15,7 @@ func TestLength(t *testing.T) {
 		t.Errorf("An error has occured: %s\n", err)
 	}
 
-	if math.Round(result*math.Pow(10, 3))/math.Pow(10, 3) != 8.2 {
+	if math.Round(result*math.Pow(10, 3))/math.Pow(10, 3) != 8.202 {
 		t.Errorf("Expected 8.2021, got %f.\n", math.Round(result*math.Pow(10, 4))/math.Pow(10, 4))
 	}
 

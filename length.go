@@ -15,13 +15,15 @@ var defaultError error = errors.New("Unsupported unit destination.")
 // - The converted value (float64).
 // - An error if there is one (error).
 func Length(v float64, from UnitLength, to UnitLength) (float64, error) {
+	const meterToFeet float64 = 3.2808
+
 	if from == to {
 		return v, nil
 	}
 
 	if from == Feet {
 		if to == Meter {
-			return v / 3.28, nil
+			return v / meterToFeet, nil
 		} else {
 			return 0, defaultError
 		}
@@ -29,7 +31,7 @@ func Length(v float64, from UnitLength, to UnitLength) (float64, error) {
 
 	if from == Meter {
 		if to == Feet {
-			return v * 3.28, nil
+			return v * meterToFeet, nil
 		} else {
 			return 0, defaultError
 		}
