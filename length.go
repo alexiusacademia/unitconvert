@@ -7,8 +7,8 @@ var Feet Unit = Unit{Name: "feet", Type: LengthUnit, System: "metric"}
 //
 // Args:
 // - v (float64): The value to be converted.
-// - from (UnitLength): The unit of the value.
-// - to (UnitLength): The destination unit.
+// - from (Unit): The unit of the value.
+// - to (Unit): The destination unit.
 //
 // Returns:
 // - The converted value (float64).
