@@ -14,6 +14,9 @@ var Feet Unit = Unit{Name: "feet", Type: LengthUnit, System: "metric"}
 // - The converted value (float64).
 // - An error if there is one (error).
 func Length(v float64, from, to Unit) (float64, error) {
+	if from.Type != LengthUnit || to.Type != LengthUnit {
+		return 0, invalidInputTypes
+	}
 
 	if from == to {
 		return v, nil
@@ -21,7 +24,7 @@ func Length(v float64, from, to Unit) (float64, error) {
 
 	factor, ok := conversionFactors[from][to]
 	if !ok {
-		return 0, UnsupportedDestinationError
+		return 0, unsupportedDestinationError
 	}
 
 	return v * factor, nil
