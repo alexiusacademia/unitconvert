@@ -1,11 +1,11 @@
 package unitconvert
 
-type UnitLength int
+type UnitArea int
 type UnitVolume int
 
 const (
-	Meter UnitLength = iota
-	Feet
+	SquareMeter UnitArea = iota
+	SquareFoot
 )
 
 const (

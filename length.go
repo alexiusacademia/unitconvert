@@ -4,6 +4,27 @@ import "errors"
 
 var defaultError error = errors.New("Unsupported unit destination.")
 
+type UnitLength int
+
+const (
+	Meter UnitLength = iota
+	Feet
+)
+
+const meterToFeet float64 = 3.28084
+
+var conversionFactors = map[UnitLength]map[UnitLength]float64{
+	Meter: {
+		Feet: meterToFeet,
+		// Add more here
+	},
+	Feet: {
+		Meter: 1 / meterToFeet,
+		// Add more here
+	},
+	// Add more here
+}
+
 // Convert length quantities.
 //
 // Args:
@@ -14,28 +35,16 @@ var defaultError error = errors.New("Unsupported unit destination.")
 // Returns:
 // - The converted value (float64).
 // - An error if there is one (error).
-func Length(v float64, from UnitLength, to UnitLength) (float64, error) {
-	const meterToFeet float64 = 3.2808
+func Length(v float64, from, to UnitLength) (float64, error) {
 
 	if from == to {
 		return v, nil
 	}
 
-	if from == Feet {
-		if to == Meter {
-			return v / meterToFeet, nil
-		} else {
-			return 0, defaultError
-		}
+	factor, ok := conversionFactors[from][to]
+	if !ok {
+		return 0, defaultError
 	}
 
-	if from == Meter {
-		if to == Feet {
-			return v * meterToFeet, nil
-		} else {
-			return 0, defaultError
-		}
-	}
-
-	return 0, nil
+	return v * factor, nil
 }
