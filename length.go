@@ -3,18 +3,6 @@ package unitconvert
 var Meter Unit = Unit{Name: "meter", Type: LengthUnit, System: "metric"}
 var Feet Unit = Unit{Name: "feet", Type: LengthUnit, System: "metric"}
 
-var conversionFactors = map[Unit]map[Unit]float64{
-	Meter: {
-		Feet: meterToFeet,
-		// Add more here
-	},
-	Feet: {
-		Meter: 1 / meterToFeet,
-		// Add more here
-	},
-	// Add more here
-}
-
 // Convert length quantities.
 //
 // Args:
