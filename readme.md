@@ -4,11 +4,46 @@
 
 ## Installation
 
+Like any standard go module installation:
+
 ```
-go get github.com/alexiusacademia/unitconvert.git
+go get github.com/alexiusacademia/unitconvert
+```
+
+If you want to update the package, just go with
+
+```
+go get -u github.com/alexiusacademia/unitconvert
 ```
 
 ## Sample
+
+1. In this example, we are going to convert 5.5 feet to meters.
+
+```
+package main
+
+import (
+	"fmt"
+
+	uc "github.com/alexiusacademia/unitconvert"
+)
+
+func main() {
+	value := 5.5 // Sample value in feet
+
+	// Let's convert it to feet
+	newValue, err := uc.Length(value, uc.Feet, uc.Meter)
+
+	if err != nil {
+		panic(err)
+	}
+
+	fmt.Printf("The converted value from meter to feet is: %f\n", newValue)
+}
+```
+
+The output shoud be 1.6764
 
 ## Run tests
 
