@@ -1,5 +1,7 @@
 package unitconvert
 
+import "math"
+
 const meterToFeet float64 = 3.28084
 
 var conversionFactors = map[Unit]map[Unit]float64{
@@ -9,6 +11,14 @@ var conversionFactors = map[Unit]map[Unit]float64{
 	},
 	Feet: {
 		Meter: 1 / meterToFeet,
+		// Add more here
+	},
+	SquareMeter: {
+		SquareFeet: math.Pow(meterToFeet, 2),
+		// Add more here
+	},
+	SquareFeet: {
+		SquareMeter: 1 / math.Pow(meterToFeet, 2),
 		// Add more here
 	},
 	// Add more here
