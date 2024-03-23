@@ -32,7 +32,7 @@ import (
 func main() {
 	value := 5.5 // Sample value in feet
 
-	// Let's convert it to feet
+	// Let's convert it to meter
 	newValue, err := uc.Length(value, uc.Feet, uc.Meter)
 
 	if err != nil {
