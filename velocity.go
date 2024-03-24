@@ -2,6 +2,8 @@ package unitconvert
 
 var MeterPerSecond Unit = Unit{Name: "meter per second", Type: VelocityUnit, System: "metric"}
 var FeetPerSecond Unit = Unit{Name: "feet per second", Type: VelocityUnit, System: "english"}
+var KilometerPerHour Unit = Unit{Name: "kilometer per hour", Type: VelocityUnit, System: "metric"}
+var MilesPerHour Unit = Unit{Name: "miles per hour", Type: VelocityUnit, System: "english"}
 
 // Convert velocity quantities.
 //

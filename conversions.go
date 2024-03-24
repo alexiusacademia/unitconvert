@@ -3,6 +3,7 @@ package unitconvert
 import "math"
 
 const meterToFeet float64 = 3.28084
+const kilometerToMile float64 = 0.621371
 
 var conversionFactors = map[Unit]map[Unit]float64{
 	Meter: {
@@ -22,10 +23,24 @@ var conversionFactors = map[Unit]map[Unit]float64{
 		// Add more here
 	},
 	MeterPerSecond: {
-		FeetPerSecond: meterToFeet,
+		FeetPerSecond:    meterToFeet,
+		KilometerPerHour: 1 / 0.277778,
+		MilesPerHour:     2.236942,
 	},
 	FeetPerSecond: {
-		MeterPerSecond: 1 / meterToFeet,
+		MeterPerSecond:   1 / meterToFeet,
+		KilometerPerHour: 1 / 0.911344,
+		MilesPerHour:     1 / 1.46667,
+	},
+	KilometerPerHour: {
+		MilesPerHour:   kilometerToMile,
+		MeterPerSecond: 0.277778,
+		FeetPerSecond:  0.911344,
+	},
+	MilesPerHour: {
+		KilometerPerHour: 1 / kilometerToMile,
+		MeterPerSecond:   0.447038,
+		FeetPerSecond:    1.466667,
 	},
 	// Add more here
 }
