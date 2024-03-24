@@ -21,5 +21,11 @@ var conversionFactors = map[Unit]map[Unit]float64{
 		SquareMeter: 1 / math.Pow(meterToFeet, 2),
 		// Add more here
 	},
+	MeterPerSecond: {
+		FeetPerSecond: meterToFeet,
+	},
+	FeetPerSecond: {
+		MeterPerSecond: 1 / meterToFeet,
+	},
 	// Add more here
 }
