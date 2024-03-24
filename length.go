@@ -1,7 +1,7 @@
 package unitconvert
 
 var Meter Unit = Unit{Name: "meter", Type: LengthUnit, System: "metric"}
-var Feet Unit = Unit{Name: "feet", Type: LengthUnit, System: "metric"}
+var Feet Unit = Unit{Name: "feet", Type: LengthUnit, System: "english"}
 
 // Convert length quantities.
 //

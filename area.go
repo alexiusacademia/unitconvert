@@ -1,7 +1,7 @@
 package unitconvert
 
 var SquareMeter Unit = Unit{Name: "square meter", Type: AreaUnit, System: "metric"}
-var SquareFeet Unit = Unit{Name: "square feet", Type: AreaUnit, System: "metric"}
+var SquareFeet Unit = Unit{Name: "square feet", Type: AreaUnit, System: "english"}
 
 // Convert length quantities.
 //
