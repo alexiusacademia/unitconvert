@@ -4,6 +4,8 @@
 
 Each unit type is restricted so that you can only convert units of the same type (e.g. length to length) without accidentally converting different unit types (e.g. length to area).
 
+This library tries to exclude unit conversions that are already available in the [https://github.com/bcicen/go-units](https://github.com/bcicen/go-units) repository.
+
 ## Installation
 
 Like any standard go module installation:
