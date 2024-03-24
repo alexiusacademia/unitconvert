@@ -56,3 +56,9 @@ To run all the tests in the library, run this in the root of this codebase.
 ```
 go test -v ./...
 ```
+
+## Contributing
+
+Firstly, fork the repository and clone to your own machine.
+
+To contribute to a selected version, create a new branch (e.g. v0.5.0) and then work from there. To submit the version for review, create a pull request. Make sure to follow the main feature indicated in the `roadmap.md` file.
