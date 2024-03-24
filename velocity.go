@@ -1,7 +1,7 @@
 package unitconvert
 
-var MeterPerSecond Unit = Unit{Name: "meter per second", Type: LengthUnit, System: "metric"}
-var FeetPerSecond Unit = Unit{Name: "feet per second", Type: LengthUnit, System: "english"}
+var MeterPerSecond Unit = Unit{Name: "meter per second", Type: VelocityUnit, System: "metric"}
+var FeetPerSecond Unit = Unit{Name: "feet per second", Type: VelocityUnit, System: "english"}
 
 // Convert velocity quantities.
 //
