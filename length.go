@@ -13,6 +13,13 @@ var Feet Unit = Unit{Name: "feet", Type: LengthUnit, System: "english"}
 // Returns:
 //   - float64: The converted value.
 //   - error: An error indicating any conversion or input validation issues.
+//
+// Example:
+//
+//	v := 2.5 // Value to be converted
+//	origUnit := unitconvert.Meter // Original unit
+//	destUnit := unitconvert.Feet  // Destination unit
+//	newValue, err := unitconvert.Length(v, origUnit, destUnit) // Conversion
 func Length(v float64, from, to Unit) (float64, error) {
 	if from.Type != LengthUnit || to.Type != LengthUnit {
 		return 0, invalidInputTypes

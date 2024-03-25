@@ -15,6 +15,13 @@ var MilesPerHour Unit = Unit{Name: "miles per hour", Type: VelocityUnit, System:
 // Returns:
 //   - float64: The converted value.
 //   - error: An error indicating any conversion or input validation issues.
+//
+// Example:
+//
+//	v := 2.5 // Value to be converted
+//	origUnit := unitconvert.MeterPerSecond // Original unit
+//	destUnit := unitconvert.FeetPerSecond  // Destination unit
+//	newValue, err := unitconvert.Length(v, origUnit, destUnit) // Conversion
 func Velocity(v float64, from, to Unit) (float64, error) {
 	if from.Type != VelocityUnit || to.Type != VelocityUnit {
 		return 0, invalidInputTypes
