@@ -8,9 +8,9 @@ var MilesPerHour Unit = Unit{Name: "miles per hour", Type: VelocityUnit, System:
 // Convert velocity quantities.
 //
 // Args:
-// - v (float64): The value to be converted.
-// - from (Unit): The unit of the value.
-// - to (Unit): The destination unit.
+// - v (float64): The value to be converted.\n
+// - from (Unit): The unit of the value.\n
+// - to (Unit): The destination unit.\n
 //
 // Returns:
 // - The converted value (float64).
