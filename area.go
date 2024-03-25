@@ -13,6 +13,13 @@ var SquareFeet Unit = Unit{Name: "square feet", Type: AreaUnit, System: "english
 // Returns:
 //   - float64: The converted value.
 //   - error: An error indicating any conversion or input validation issues.
+//
+// Example:
+//
+//	v := 2.5 // Value to be converted
+//	origUnit := unitconvert.SquareMeter // Original unit
+//	destUnit := unitconvert.SquareFeet  // Destination unit
+//	newValue, err := unitconvert.Area(v, origUnit, destUnit) // Conversion
 func Area(v float64, from, to Unit) (float64, error) {
 	if from.Type != AreaUnit || to.Type != AreaUnit {
 		return 0, invalidInputTypes
