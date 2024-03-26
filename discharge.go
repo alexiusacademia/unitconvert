@@ -2,6 +2,7 @@ package unitconvert
 
 var CubicMeterPerSecond Unit = Unit{Name: "cubic meter per second", Type: DischargeUnit, System: "metric"}
 var CubicFeetPerSecond Unit = Unit{Name: "cubic feet per second", Type: DischargeUnit, System: "english"}
+var LiterPerSecond Unit = Unit{Name: "liter per second", Type: DischargeUnit, System: "metric"}
 
 // Convert Discharge quantities.
 //
