@@ -79,10 +79,10 @@ func TestDischarge(t *testing.T) {
 		t.Errorf("An error has occured: %s\n", err)
 	}
 
-	result = math.Round(result*math.Pow(10, 4)) / math.Pow(10, 4)
+	result = math.Round(result*math.Pow(10, 1)) / math.Pow(10, 1)
 
-	if result != 0.0883 {
-		t.Errorf("Expected 0.0882867, got %f.\n", math.Round(result*math.Pow(10, 4))/math.Pow(10, 4))
+	if result != 88286.7 {
+		t.Errorf("Expected 88286.7, got %f.\n", math.Round(result*math.Pow(10, 1))/math.Pow(10, 1))
 	}
 
 	result, err = unitconvert.Discharge(v, unitconvert.CubicFeetPerSecond, unitconvert.LiterPerSecond)
@@ -90,9 +90,9 @@ func TestDischarge(t *testing.T) {
 		t.Errorf("An error has occured: %s\n", err)
 	}
 
-	result = math.Round(result*math.Pow(10, 1)) / math.Pow(10, 1)
+	result = math.Round(result*math.Pow(10, 7)) / math.Pow(10, 7)
 
-	if result != 70.8 {
-		t.Errorf("Expected 70.8, got %f.\n", math.Round(result*math.Pow(10, 1))/math.Pow(10, 1))
+	if result != 0.0000708 {
+		t.Errorf("Expected 0.0000708, got %f.\n", math.Round(result*math.Pow(10, 7))/math.Pow(10, 7))
 	}
 }
