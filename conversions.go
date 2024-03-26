@@ -5,6 +5,9 @@ import "math"
 const meterToFeet float64 = 3.28084
 const kilometerToMile float64 = 0.621371
 
+// conversionFactors is a map that stores conversion factors between different units.
+// It maps from a unit (source) to another map, which in turn maps to the destination unit and its conversion factor.
+// For example, conversionFactors[Meter][Feet] gives the conversion factor from meters to feet.
 var conversionFactors = map[Unit]map[Unit]float64{
 	Meter: {
 		Feet: meterToFeet,
