@@ -52,12 +52,12 @@ var conversionFactors = map[Unit]map[Unit]float64{
 	},
 	CubicFeetPerSecond: {
 		CubicMeterPerSecond: 1 / math.Pow(meterToFeet, 3),
-		LiterPerSecond:      1 / (1000 * math.Pow(meterToFeet, 3)),
+		LiterPerSecond:      1000 / math.Pow(meterToFeet, 3),
 		// Add more here
 	},
 	LiterPerSecond: {
 		CubicMeterPerSecond: 1 / 1000.0,
-		CubicFeetPerSecond:  1000 * math.Pow(meterToFeet, 3),
+		CubicFeetPerSecond:  math.Pow(meterToFeet, 3) / 1000,
 	},
 	// Add more here
 }
