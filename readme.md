@@ -70,3 +70,30 @@ To avoid conflict in pushing branch name in a tag format, please create your bra
 ### Pushing Updates/Changes
 
 Before pushing your changes to your branch, first fetch the changes from the original repository then merge the updates to your branch to minimize or eliminate conflicts.
+
+### Providing Tests
+
+Tests should be provided in case it is not provided by default. The number of tests in case of conversion functions should vary depending on the number of conversions per UnitType.
+
+For example, you have 4 conversions in a unit type, there should be 16. So the sqaure of the number of conversions from the `conversionFactors` variable.
+
+### conversionFactors variable
+
+If you are adding conversion factors from the `conversionFactors` variable, please take note of the following:
+
+- The number of conversion factor per unit shall be the same for all `Unit`s. Meaning if you are converting a `Unit` on a `UnitType` with 2 other units, you should have 3 unit conversions for that `UnitType` and 2 conversion factors for each of those `Unit`s in the `UnitType` like in the code below:
+
+```go
+Meter: {
+	Feet: meterToFeet,
+	Kilometer: 1000,
+},
+Kilometer: {
+	Meter: 1/1000,
+	Feet: 3280.84,
+},
+Feet: {
+	Meter: 1 / meterToFeet,
+	Kilometer: 0.0003048,
+},
+```
