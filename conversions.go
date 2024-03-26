@@ -42,5 +42,13 @@ var conversionFactors = map[Unit]map[Unit]float64{
 		MeterPerSecond:   0.447038,
 		FeetPerSecond:    1.466667,
 	},
+	CubicMeterPerSecond: {
+		CubicFeetPerSecond: math.Pow(meterToFeet, 3),
+		// Add more here
+	},
+	CubicFeetPerSecond: {
+		CubicMeterPerSecond: 1 / math.Pow(meterToFeet, 3),
+		// Add more here
+	},
 	// Add more here
 }
