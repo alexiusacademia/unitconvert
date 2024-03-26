@@ -30,6 +30,15 @@ func TestDischarge(t *testing.T) {
 		t.Errorf("Expected %f, got %f\n", v, result)
 	}
 
+	result, err = unitconvert.Discharge(v, unitconvert.CubicMeterPerSecond, unitconvert.CubicMeterPerSecond)
+	if err != nil {
+		t.Errorf("An error has occured: %s\n", err)
+	}
+
+	if result != result {
+		t.Errorf("Expected %f, got %f\n", v, result)
+	}
+
 	result, err = unitconvert.Discharge(v, unitconvert.CubicFeetPerSecond, unitconvert.CubicMeterPerSecond)
 	if err != nil {
 		t.Errorf("An error has occured: %s\n", err)
@@ -79,10 +88,10 @@ func TestDischarge(t *testing.T) {
 		t.Errorf("An error has occured: %s\n", err)
 	}
 
-	result = math.Round(result*math.Pow(10, 1)) / math.Pow(10, 1)
+	result = math.Round(result*math.Pow(10, 3)) / math.Pow(10, 3)
 
-	if result != 88286.7 {
-		t.Errorf("Expected 88286.7, got %f.\n", math.Round(result*math.Pow(10, 1))/math.Pow(10, 1))
+	if result != 0.088 {
+		t.Errorf("Expected 0.088, got %f.\n", math.Round(result*math.Pow(10, 3))/math.Pow(10, 3))
 	}
 
 	result, err = unitconvert.Discharge(v, unitconvert.CubicFeetPerSecond, unitconvert.LiterPerSecond)
@@ -90,9 +99,9 @@ func TestDischarge(t *testing.T) {
 		t.Errorf("An error has occured: %s\n", err)
 	}
 
-	result = math.Round(result*math.Pow(10, 7)) / math.Pow(10, 7)
+	result = math.Round(result*math.Pow(10, 4)) / math.Pow(10, 4)
 
-	if result != 0.0000708 {
-		t.Errorf("Expected 0.0000708, got %f.\n", math.Round(result*math.Pow(10, 7))/math.Pow(10, 7))
+	if result != 70.7921 {
+		t.Errorf("Expected 70.7921, got %f.\n", math.Round(result*math.Pow(10, 4))/math.Pow(10, 4))
 	}
 }
