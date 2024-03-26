@@ -1,5 +1,7 @@
 # unitconvert
 
+[![Go Reference](https://pkg.go.dev/badge/github.com/alexiusacademia/unitconvert.svg)](https://pkg.go.dev/github.com/alexiusacademia/unitconvert)
+
 `unitconvert` let's you convert quantities from one unit to another for engineering calculations.
 
 Each unit type is restricted so that you can only convert units of the same type (e.g. length to length) without accidentally converting different unit types (e.g. length to area).
@@ -61,4 +63,10 @@ go test -v ./...
 
 Firstly, fork the repository and clone to your own machine.
 
-To contribute to a selected version, create a new branch (e.g. v0.5.0) and then work from there. To submit the version for review, create a pull request. Make sure to follow the main feature indicated in the `roadmap.md` file.
+> To contribute to a selected version, create a new branch (e.g. v0.5.0) and then work from there. To submit the version for review, create a pull request. Make sure to follow the main feature indicated in the `roadmap.md` file.
+
+To avoid conflict in pushing branch name in a tag format, please create your branch names in the format v000 for v0.0.0. Since this creates issues when pushing changes to the branch due to same command for pushing branch and pushing tag to the origin.
+
+### Pushing Updates/Changes
+
+Before pushing your changes to your branch, first fetch the changes from the original repository then merge the updates to your branch to minimize or eliminate conflicts.
