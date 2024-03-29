@@ -97,3 +97,8 @@ Feet: {
 	Kilometer: 0.0003048,
 },
 ```
+
+## Contributors
+
+- [Alexius Academia](https://github.com/alexiusacademia)
+- [engrleir](https://github.com/engrleir)
