@@ -29,34 +29,34 @@ func Convert(v float64, from, to Unit) (float64, error) {
 
 //
 
-func Length(v float64, from, to Unit) (float64, error) {
-	if from.Type != LengthUnit || to.Type != LengthUnit {
-		return 0, invalidInputTypes
-	}
+// func Length(v float64, from, to Unit) (float64, error) {
+// 	if from.Type != LengthUnit || to.Type != LengthUnit {
+// 		return 0, invalidInputTypes
+// 	}
 
-	return Convert(v, from, to)
-}
+// 	return Convert(v, from, to)
+// }
 
-func Area(v float64, from, to Unit) (float64, error) {
-	if from.Type != AreaUnit || to.Type != AreaUnit {
-		return 0, invalidInputTypes
-	}
+// func Area(v float64, from, to Unit) (float64, error) {
+// 	if from.Type != AreaUnit || to.Type != AreaUnit {
+// 		return 0, invalidInputTypes
+// 	}
 
-	return Convert(v, from, to)
-}
+// 	return Convert(v, from, to)
+// }
 
-func Velocity(v float64, from, to Unit) (float64, error) {
-	if from.Type != VelocityUnit || to.Type != VelocityUnit {
-		return 0, invalidInputTypes
-	}
+// func Velocity(v float64, from, to Unit) (float64, error) {
+// 	if from.Type != VelocityUnit || to.Type != VelocityUnit {
+// 		return 0, invalidInputTypes
+// 	}
 
-	return Convert(v, from, to)
-}
+// 	return Convert(v, from, to)
+// }
 
-func Discharge(v float64, from, to Unit) (float64, error) {
-	if from.Type != DischargeUnit || to.Type != DischargeUnit {
-		return 0, invalidInputTypes
-	}
+// func Discharge(v float64, from, to Unit) (float64, error) {
+// 	if from.Type != DischargeUnit || to.Type != DischargeUnit {
+// 		return 0, invalidInputTypes
+// 	}
 
-	return Convert(v, from, to)
-}
+// 	return Convert(v, from, to)
+// }
