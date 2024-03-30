@@ -10,6 +10,25 @@ package unitconvert
 // Returns:
 // - The converted value (float64).
 // - An error if there is one (error).
+//
+// Example:
+//
+//	package main
+//
+// import uc "github.com/alexiusacademia/unitconvert"
+//
+//	func main() {
+//		value := 5.5 // Sample value in feet
+//
+//		// Let's convert it to meter
+//		newValue, err := uc.Convert(value, uc.Feet, uc.Meter)
+//
+//		if err != nil {
+//			panic(err)
+//		}
+//
+//		fmt.Printf("The converted value from feet to meter is: %f\n", newValue)
+//	}
 func Convert(v float64, from, to Unit) (float64, error) {
 	if from.Type != to.Type {
 		return 0, errIncompatibleUnitTypes
