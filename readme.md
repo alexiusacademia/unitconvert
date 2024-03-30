@@ -39,13 +39,13 @@ func main() {
 	value := 5.5 // Sample value in feet
 
 	// Let's convert it to meter
-	newValue, err := uc.Length(value, uc.Feet, uc.Meter)
+	newValue, err := uc.Convert(value, uc.Feet, uc.Meter)
 
 	if err != nil {
 		panic(err)
 	}
 
-	fmt.Printf("The converted value from meter to feet is: %f\n", newValue)
+	fmt.Printf("The converted value from feet to meter is: %f\n", newValue)
 }
 ```
 
